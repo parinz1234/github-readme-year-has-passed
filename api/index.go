@@ -70,15 +70,4 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 	err = t.Execute(w, data)
 	check(err)
-
-	noItems := struct {
-		Title string
-		Items []string
-	}{
-		Title: "My another page",
-		Items: []string{},
-	}
-
-	err = t.Execute(w, noItems)
-	check(err)
 }
