@@ -81,6 +81,4 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 	err = t.Execute(w, noItems)
 	check(err)
-
-	// fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
 }
