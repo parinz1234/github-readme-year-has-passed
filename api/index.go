@@ -8,46 +8,9 @@ import (
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 
-	const tpl = `
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8">
-			<title>{{.Title}}</title>
-			<style>
-				.main {
-						display: flex;
-				}
-				.container {
-					width: 100%;
-				}
-				.bar {
-					border: 5px solid #333333;
-					background-color: #333333;
-					width: 75%;
-				}
-				.progress {
-					background-color: #00fe30;
-					width: {{.Percentage}}%;
-					height: 40px;
-				}
-				.title {
-					color: #fff;
-				}
-		</style>
-		</head>
-		<body>
-			<div class="main">
-				<div class="container">
-					<h1 class="">{{.Title}}</h1>
-					<div class="bar">
-						<div class="progress"></div>
-					</div>
-				</div>
-			</div>
-		</body>
-	</html>
-`
+	const tpl = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50" cy="50" r="50"/>
+</svg>`
 
 	check := func(err error) {
 		if err != nil {
