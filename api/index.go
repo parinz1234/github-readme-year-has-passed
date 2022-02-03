@@ -13,15 +13,7 @@ type data struct {
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 
-	const tpl = `
-	{{.Top}}
-	<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-	 <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
-	 <g>
-		<title>Layer 1</title>
-		<rect id="svg_1" height="126" width="165" y="109" x="155" stroke-width="5" stroke="#000000" fill="{{.Color}}"/>
-	 </g>
-	</svg>
+	const tpl = `{{.Top}}<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><g><title>Layer 1</title><rect id="svg_1" height="126" width="165" y="109" x="155" stroke-width="5" stroke="#000000" fill="{{.Color}}"/></g></svg>
 	`
 
 	check := func(err error) {
