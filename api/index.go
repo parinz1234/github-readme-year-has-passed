@@ -13,14 +13,13 @@ type data struct {
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 
-	const tpl = `<!doctype html>
-	<svg viewBox="0 0 400 130" width="400" height="130">
-		<rect width="380" height="80" style="stroke: rgb(0, 0, 0); fill: rgb(51, 51, 51); fill-rule: nonzero;" data-bx-origin="-0.038 -0.658333" x="20" y="50"></rect>
-		<text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 17.2px;" x="258.918" y="49.952"> </text>
-		<g></g>
-		<text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 19.2px; white-space: pre;" data-bx-origin="-0.076015 -0.947915" transform="matrix(1.245747, 0, 0, 0.950186, -4.914937, 2.73884)"><tspan x="20" y="35.375" style="text-decoration: underline solid rgba(255, 255, 255, 0.9);">6% of 2022 has passed</tspan></text>
-		<rect x="30" y="60" width="360" height="60" style="stroke: rgb(0, 0, 0); fill: rgb(0, 253, 49);"></rect>
-	</svg>
+	const tpl = `{{.Top}}<svg viewBox="0 0 400 130" width="400" height="130">
+  <rect width="380" height="80" style="stroke: rgb(0, 0, 0); fill: rgb(51, 51, 51); fill-rule: nonzero;" data-bx-origin="-0.038 -0.658333" x="20" y="50"></rect>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 17.2px;" x="258.918" y="49.952"> </text>
+  <g></g>
+  <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 19.2px; white-space: pre;" data-bx-origin="-0.076015 -0.947915" transform="matrix(1.245747, 0, 0, 0.950186, -4.914937, 2.73884)"><tspan x="20" y="35.375" style="text-decoration: underline solid rgba(255, 255, 255, 0.9);">6% of 2022 has passed</tspan></text>
+  <rect x="30" y="60" width="360" height="60" style="stroke: rgb(0, 0, 0); fill: rgb(0, 253, 49);"></rect>
+</svg>
 	`
 
 	check := func(err error) {
