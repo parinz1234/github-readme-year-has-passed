@@ -8,16 +8,23 @@ import (
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 
-	const tpl = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-<circle cx="50" cy="50" r="50"/>
-</svg>`
+	const tpl = `
+<?xml version=\"1.0\" encoding=\"utf-8\" ?>
+<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+	<!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+	<g>
+	<title>Layer 1</title>
+	<rect id="svg_1" height="126" width="165" y="109" x="155" stroke-width="5" stroke="#000000" fill="#ff00ff"/>
+	</g>
+</svg>
+ `
 
 	check := func(err error) {
 		if err != nil {
 			log.Fatal(err)
 		}
 	}
-	t, err := template.New("webpage").Parse(tpl)
+	t, err := template.New("svg").Parse(tpl)
 	check(err)
 
 	type Data struct {
