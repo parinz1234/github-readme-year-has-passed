@@ -28,6 +28,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	var d data
 	d.Top = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>"
 	d.Color = "#ff00ff"
+	w.Header().Set("Content-Type", "image/svg+xml")
 	err = t.ExecuteTemplate(w, "svg", &d)
 	check(err)
 }
